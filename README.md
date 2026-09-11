@@ -1,152 +1,132 @@
-# 🥗 NutriMind — AI Nutritional Intelligence & Food Analysis
+# NutriMind AI
 
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Node.js](https://img.shields.io/badge/Node.js-20+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-
-**NutriMind** is an advanced, empathetic, and highly accurate nutritional analysis web application. By analyzing an uploaded food photo or live camera snapshot, it delivers real-time breakdown of ingredients, calorie and macronutrient distributions, health density scores, and actionable clinical advice in a modern **Bento Grid** dashboard interface.
+NutriMind AI is an advanced, empathetic, and highly accurate nutritional analysis application. By analyzing an uploaded image of food, it provides a detailed breakdown of its properties, nutritional profile, a holistic health assessment, and positive actionable advice in a gorgeous, modern, responsive **Bento Grid** dashboard interface.
 
 ---
 
 ## 🌟 Key Features
 
 1. **AI Food Identification & Portion Estimation**
-   - Automatically detects dishes, ingredients, and portion weights (grams, cups, servings).
-   - Accurately identifies complex multi-ingredient dishes.
+   - Seamlessly detects individual food items and whole dishes.
+   - Delivers accurate portion estimates (e.g., in grams, cups, or servings).
 
-2. **Durable Macronutrient & Calorie Profiling**
+2. **Durable Macronutrient & Energy Profiling**
    - Calculates estimated Calories (kcal), Protein (g), Carbohydrates (g), Fats (g), and Dietary Fiber (g).
-   - Dynamically highlights key dietary traits (*High Lean Protein*, *Complex Carbohydrates*, *Prebiotic Fiber*).
+   - Dynamically flags dietary features (e.g. *High Lean* protein, *Complex* carbohydrates, *Prebiotic* fiber).
 
 3. **Bento Grid Dashboard**
-   - Modern, aesthetic visual layout presenting calorie gauges, macro distributions, micro-nutrient tags, and health recommendations in cohesive card modules.
+   - An eye-pleasing, state-of-the-art visual presentation highlighting nutritional facts, macronutrient balances, key vitamins, and attributes in modern card partitions.
 
 4. **NutriMind Health Score**
-   - Rates meal quality on a clinical 1–10 scale based on whole-food density, balance, and processing level with clear explanations.
+   - Ranks the overall nutritional health density of your dish on a scale of 1 to 10 with clear, clinically conscious reasoning.
 
-5. **Actionable Wellness Tips**
-   - Provides encouraging, dietitian-grade suggestions to optimize nutrient absorption and glycemic response.
+5. **Key Properties & Micronutrients**
+   - Identifies highlight vitamins, minerals, and dietary attributes (e.g., *Low Glycemic*, *Whole-food*, *High Iron*).
 
-6. **Flexible Image Input**
-   - Drag-and-drop file upload, device filesystem browsing, and integrated device **Live Camera Capture**.
-   - Built-in preset dishes for quick testing.
+6. **Actionable Wellness Tips**
+   - Generates positive, encouraging, and clinical tips to instantly optimize the meal's nutrient uptake.
 
-7. **Local Meal History**
-   - Automatically records recent analyses in your browser storage for session review.
+7. **Dual Upload Workflow**
+   - Supports Drag-and-Drop file uploads, direct filesystem browsing, and integrated device **Live Camera Capture** for instant photo analysis.
 
----
-
-## 🚀 Tech Stack
-
-- **Frontend:** React 19, TypeScript, Tailwind CSS, Motion (Framer Motion), Recharts, Lucide Icons
-- **Backend:** Node.js, Express, tsx
-- **Build Tool:** Vite 6 with development middleware
-- **AI Engine:** Google Gemini Generative AI SDK (`@google/genai`)
+8. **One-Click Presets & Session History**
+   - Features pre-loaded classic healthy dish shortcuts for rapid testing.
+   - Locally persists analyzed meal history for seamless meal-logging tracking.
 
 ---
 
-## 🛠️ Quick Start & Local Setup
+## 🚀 Tech Stack & Architecture
 
-Follow these steps to run NutriMind locally:
+- **Frontend:** React 18+, TypeScript, Tailwind CSS, Motion (Framer Motion)
+- **Backend:** Node.js, Express (Express 4)
+- **AI Core:** `@google/genai` TypeScript SDK leveraging `gemini-3.1-flash-lite` with automatic fallback to `gemini-3.6-flash` and `gemini-3.8-flash` for high-throughput, sub-2s visual and nutritional assessments.
+- **Styling Theme:** Warm, nature-inspired **Emerald Bento Grid** palette with clean typography (Outfit display headlines paired with Inter body text and JetBrains Mono code tags).
+
+---
+
+## 🛠️ Step-by-Step Local Setup Sequence
+
+Follow these steps in sequence to get NutriMind AI running locally on your computer:
 
 ### 1. Prerequisites
-- [Node.js](https://nodejs.org/) (version 18 or higher recommended)
-- [npm](https://www.npmjs.com/) (bundled with Node.js)
-- A **Gemini API Key** (Get one free at [Google AI Studio](https://aistudio.google.com/apikey))
+Make sure you have [Node.js](https://nodejs.org/) installed (v18 or higher recommended) and npm.
 
-### 2. Clone the Repository
+### 2. Clone and Prepare the Repository
 ```bash
-git clone https://github.com/KartikJansari/NutriMind.git
-cd NutriMind
-```
+# Clone the repository
+git clone <your-repository-url>
+cd <repository-folder>
 
-### 3. Install Dependencies
-```bash
+# Install the dependencies
 npm install
 ```
 
-### 4. Configure Environment Variables
-Create a `.env` file in the root directory:
-```bash
-# On Windows (PowerShell):
-Copy-Item .env.example .env
-
-# On Mac/Linux:
-cp .env.example .env
-```
-
-Open `.env` and set your API key:
+### 3. Configure Environment Variables
+Create a file named `.env` in the root of the project (you can copy the format from `.env.example`):
 ```env
-GEMINI_API_KEY="YOUR_GEMINI_API_KEY_HERE"
+# Required for Gemini AI API calls
+GEMINI_API_KEY="YOUR_ACTUAL_GEMINI_API_KEY"
+
+# Optional App hosting URL
 APP_URL="http://localhost:3000"
 ```
 
-### 5. Run the Application
-Start the development server:
+### 4. Run the Development Server
+Run the full-stack development environment where both the React Vite frontend and Express server execute in tandem:
 ```bash
 npm run dev
 ```
+Open [http://localhost:3000](http://localhost:3000) in your web browser to view the application!
 
-Open your browser and navigate to:
-```
-http://localhost:3000
-```
-
----
-
-## 📦 Production Build
-
-To compile and launch the production application:
-
+### 5. Create a Production Build
+Compile the application to highly optimized client bundles and a bundled backend server script:
 ```bash
-# Build the client bundle and bundle the server
+# Build the React static client and Express backend
 npm run build
 
-# Start the production server
-npm start
+# Start the compiled production applet
+npm run start
 ```
 
 ---
 
-## 🔌 API Reference
+## 🔌 API Endpoints
 
 ### `POST /api/analyze`
-Analyzes a food image and returns nutritional assessment JSON.
+Submits a food image to the NutriMind AI engine for structured evaluation.
 
-**Request Payload:**
+**Request Body:**
 ```json
 {
-  "image": "data:image/jpeg;base64,...",
-  "mimeType": "image/jpeg",
-  "sampleUrl": "https://..."
+  "image": "iVBORw0KGgoAAAANS...", // Base64 encoded image string (optional if sampleUrl is provided)
+  "mimeType": "image/jpeg",         // MIME type of the uploaded image
+  "sampleUrl": "https://..."        // Optional: Remote URL of a preset meal image to fetch and analyze
 }
 ```
 
-**Response Example:**
+**Response JSON Structure:**
 ```json
 {
   "foodIdentification": {
-    "dishName": "Avocado Toast with Poached Egg",
-    "portionSize": "1 slice whole-grain bread, 1/2 avocado, 1 egg"
+    "dishName": "Avocado Toast with Egg",
+    "portionSize": "1 slice, 150g"
   },
   "nutritionalProfile": {
     "calories": 280,
-    "protein": 12,
-    "carbohydrates": 22,
+    "protein": 11,
+    "carbohydrates": 24,
     "fats": 16,
     "fiber": 6
   },
   "healthAssessment": {
-    "score": 8.5,
-    "explanation": "High in healthy monounsaturated fatty acids and dietary fiber with high-bioavailability egg protein."
+    "score": 8,
+    "explanation": "This meal is exceptional in dietary fiber and healthy monounsaturated fats from avocado, backed by a clean protein source from the egg. Highly whole-food based with low processing."
   },
   "properties": {
-    "micronutrients": ["Vitamin E", "Potassium", "Folate", "Choline"],
-    "attributes": ["Whole-Food", "High-Fiber", "Heart-Healthy"]
+    "micronutrients": ["Vitamin E", "Potassium", "Folate"],
+    "attributes": ["Whole-food", "High-Fiber", "Healthy Fats"]
   },
-  "actionableTip": "Add a sprinkle of hemp seeds or crushed red pepper for extra anti-inflammatory micronutrients."
+  "actionableTip": "Consider sprinkling a tablespoon of flaxseed or chia seeds on top to increase Omega-3 fatty acids without spiking carbs."
 }
 ```
 
@@ -154,11 +134,4 @@ Analyzes a food image and returns nutritional assessment JSON.
 
 ## 🔒 Security & Privacy
 
-- All AI requests and API keys are strictly handled **server-side**.
-- The `GEMINI_API_KEY` is kept in `.env` and is **never** sent to the client browser or committed to GitHub (prevented via `.gitignore`).
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE) — free to use, modify, and distribute.
+NutriMind AI handles all image analyses and API communication on the server-side. **Your `GEMINI_API_KEY` is never exposed to the web browser client**, protecting it from unauthorized access and keeping your credentials fully secure.
